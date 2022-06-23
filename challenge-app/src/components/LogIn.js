@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const LogIn = () => {
   return (
-    <main>
+    <>
       <section className="signup-upper">
         <h1 className="heading">Välkommen tillbaka</h1>
         <p className="header-text">Logga in</p>
@@ -29,7 +29,7 @@ const LogIn = () => {
           </p>
         </div>
       </section>
-    </main>
+    </>
   );
 };
 
