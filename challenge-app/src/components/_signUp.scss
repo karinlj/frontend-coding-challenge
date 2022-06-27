@@ -1,0 +1,100 @@
+.btn-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 2rem;
+  button {
+    &.submit-btn {
+      background: $btnGreen;
+      color: #fff;
+      &:disabled {
+        background: $lightestGrey;
+        color: lightGrey;
+        cursor: not-allowed;
+      }
+    }
+    &.delete-btn {
+      background: $red;
+      color: #fff;
+    }
+    &.cancel-link {
+      background: $lightestGrey;
+    }
+  }
+}
+button,
+.btn-link {
+  display: block;
+  border: 0;
+  padding: 0.8rem 1.1rem;
+  border-radius: $themeBorderRadius;
+  font-size: 0.9rem;
+  transition: all 0.3s ease-in;
+  box-shadow: $themeBoxShadowLight;
+  &:hover {
+    cursor: pointer;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0) !important;
+    text-decoration: none;
+  }
+}
+.signup-btn {
+  clear: both;
+  background: $blue;
+  color: #fff;
+  margin-top: 1.5rem;
+  width: 100%;
+  a {
+    color: #fff;
+  }
+}
+.signup-upper {
+  max-width: 400px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #fff;
+  box-shadow: $themeBoxShadowLight;
+  border-radius: $themeBorderRadius;
+  @media all and (max-width: $xs-max) {
+    box-shadow: none;
+  }
+  h1 {
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+  }
+  .header-text {
+    margin-top: 0;
+    text-align: center;
+    @media all and (min-width: $md-min) {
+      font-size: 1rem;
+    }
+  }
+}
+.signup-lower {
+  max-width: 400px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  p {
+    line-height: 1.4;
+    margin: 0;
+  }
+  .small-text {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    color: $lightGrey;
+    text-align: center;
+    @media all and (max-width: $xs-max) {
+      padding: 0.5rem 2rem;
+    }
+    @media all and (min-width: $md-min) {
+      padding: 1rem 3rem;
+    }
+  }
+}

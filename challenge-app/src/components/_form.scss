@@ -1,0 +1,43 @@
+form {
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  background: white;
+  label {
+    color: $lightGrey;
+    display: block;
+    margin: 0.7rem 0;
+    font-size: 0.8rem;
+  }
+  input,
+  textarea {
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.9rem 0.7rem;
+    border: 1px solid $borderColor;
+    border-radius: $themeBorderRadius;
+    color: $textColor;
+    &:focus {
+      outline: $blue solid 1px;
+      border-radius: 5px;
+      border-radius: $themeBorderRadius;
+    }
+    &::placeholder {
+      color: $middleGrey;
+    }
+  }
+  input[type="checkbox"] {
+    width: auto;
+  }
+  textarea {
+    height: 100px;
+    border: 1px solid $borderColor;
+  }
+  .checkbox-section {
+    display: flex;
+    align-items: center;
+    input {
+      margin-right: 0.5rem;
+    }
+  }
+}

@@ -1,38 +1,25 @@
-import { useState } from "react";
-
 const SingleProduct = ({ product }) => {
-  const [showInfo, setShowInfo] = useState(false);
-
   return (
     <article className="product-card">
       <div className="card-content">
-        <div className={`color-space ${product.color}`}></div>
+        {/* <div className={`color-space ${product.color}`}></div> */}
+        <div
+          className="color-space"
+          style={{ background: product.color }}
+        ></div>
+
         <div className="card-content-inner">
-          <h2>{product.title}</h2>
+          <h2>{product.name}</h2>
 
           <div>
-            <p className="card-description">{product.description}</p>
-            <div>
-              <div
-                className="card-info-toggle"
-                onClick={() => {
-                  setShowInfo(!showInfo);
-                }}
-              >
-                {!showInfo ? (
-                  <i className="fas fa-chevron-down arrow"></i>
-                ) : (
-                  <i className="fas fa-chevron-up arrow"></i>
-                )}
-                <span>See information</span>
-              </div>
-              <ul className={`card-info-list ${showInfo ? "show" : ""}`}>
-                {product &&
-                  product.infoText.map((item, index) => {
-                    return <li key={index}>{item}</li>;
-                  })}
-              </ul>
-            </div>
+            <p className="card-description">
+              Color: <span>{product.color}</span>
+            </p>
+            <p className="card-description">
+              Pantone value: <span>{product.pantone_value}</span>
+            </p>
+
+            <div></div>
           </div>
         </div>
       </div>

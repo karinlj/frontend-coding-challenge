@@ -1,39 +1,46 @@
 import { useState, useEffect } from "react";
 import SingleProduct from "./SingleProduct";
+import { getData } from "../fetchFunctions";
+import { NavLink } from "react-router-dom";
 
-//const [products, setProducts] = useState(["product1", "product2"]);
-
-const products = [
-  {
-    id: 1,
-    title: "product1",
-    color: "red",
-    description: "Lorem ipsum",
-    infoText: ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-  },
-  {
-    id: 2,
-    title: "product2",
-    color: "green",
-    description: "Lorem ipsum",
-    infoText: ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-  },
-  {
-    id: 3,
-    title: "product3",
-    color: "pink",
-    description: "Lorem ipsum",
-    infoText: ["Lorem ipsum dolor", "Lorem ipsum dolor"],
-  },
-];
 const Products = () => {
+  const [products, setProducts] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const productsUri = "https://reqres.in/api/products";
+
+  const drawProducts = async () => {
+    let tempProducts = await getData(productsUri);
+    setProducts(tempProducts);
+    setLoading(false);
+    if (tempProducts) {
+      setError(null);
+    } else {
+      setError("Endpoint error: Could not fetch data...");
+    }
+  };
+
+  useEffect(() => {
+    drawProducts();
+  }, []);
+
   return (
     <>
-      <h1>Products</h1>
+      <div className="logout">
+        <p>
+          <NavLink to="/login">Logga ut?</NavLink>
+        </p>
+      </div>
+
+      <h1>Färgkort</h1>
       <section className="product-list-section">
+        {loading && <p>...Loading</p>}
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <ul>
           {products &&
-            products.map((product) => {
+            products.data &&
+            products.data.map((product) => {
               return <SingleProduct product={product} key={product.id} />;
             })}
         </ul>
