@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { postData } from "../fetchFunctions";
 import Form from "./Form";
 import { useNavigate } from "react-router-dom";
@@ -47,7 +47,7 @@ const SignUp = () => {
   return (
     <>
       <section className="signup-upper">
-        <h1>My company</h1>
+        <h1>Färgbolaget</h1>
         <p className="header-text">Skapa Konto</p>
 
         {loading && <p>...Loading</p>}

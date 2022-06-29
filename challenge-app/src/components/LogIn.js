@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import { postData } from "../fetchFunctions";
 import Form from "./Form";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
 
 const LogIn = () => {
+  //AuthContext
+  const { setIsLoggedIn } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
@@ -43,6 +46,7 @@ const LogIn = () => {
       email: "",
       password: "",
     });
+    setIsLoggedIn(true);
     navigate("/products");
   };
 
