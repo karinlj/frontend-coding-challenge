@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/AuthContext";
 
 const LogIn = () => {
-  //AuthContext
   const { setIsLoggedIn } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -16,6 +15,7 @@ const LogIn = () => {
   });
   const navigate = useNavigate();
   const btnText = "Logga in";
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -35,11 +35,10 @@ const LogIn = () => {
     setError(null);
     const checkUserOnServer = await postData(checkUserUri, user);
     setLoading(false);
-    //hantera fel i datahämtning
     if (checkUserOnServer) {
       setError(null);
     } else {
-      setError("Ooops!! Could not add data...");
+      setError("Ooops!! Could not post data...");
       return;
     }
     setFormData({
@@ -47,18 +46,17 @@ const LogIn = () => {
       password: "",
     });
     setIsLoggedIn(true);
-    navigate("/products");
+    navigate("/");
   };
 
   return (
     <>
       <section className="signup-upper">
-        <h1>Välkommen tillbaka</h1>
+        <h1>Färgbolaget</h1>
+        <h2>Välkommen tillbaka</h2>
         <p className="header-text">Logga in</p>
-
         {loading && <p>...Loading</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
-
         <Form
           formData={formData}
           handleChange={handleChange}
@@ -66,12 +64,11 @@ const LogIn = () => {
           handleSubmit={handleSubmit}
         />
       </section>
-
       <section className="signup-lower">
         <div className="small-text">
           <p>
             Saknar du konto?
-            <NavLink to="/"> Skapa konto</NavLink>
+            <NavLink to="/signup"> Skapa konto</NavLink>
           </p>
         </div>
       </section>

@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import SingleProduct from "./SingleProduct";
 import { getData } from "../fetchFunctions";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
 
 const Products = () => {
+  const { logout } = useContext(AuthContext);
   const [products, setProducts] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -27,13 +29,13 @@ const Products = () => {
 
   return (
     <>
-      <div className="logout">
-        <p>
-          <NavLink to="/login">Logga ut?</NavLink>
-        </p>
-      </div>
+      <header className="products-header">
+        <h1>Färgkort</h1>
 
-      <h1>Färgkort</h1>
+        <p onClick={logout}>
+          <NavLink to="/">Logga ut?</NavLink>
+        </p>
+      </header>
       <section className="product-list-section">
         {loading && <p>...Loading</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}

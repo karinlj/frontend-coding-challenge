@@ -13,6 +13,7 @@ const SignUp = () => {
   });
   const navigate = useNavigate();
   const btnText = "Skapa Konto";
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -30,18 +31,17 @@ const SignUp = () => {
     };
     const addUserToServer = await postData(createUserUri, newUser);
     setLoading(false);
-    //hantera fel i datahämtning
     if (addUserToServer) {
       setError(null);
     } else {
-      setError("Ooops!! Could not add data...");
+      setError("Ooops!! Could not post data...");
       return;
     }
     setFormData({
       email: "",
       password: "",
     });
-    navigate("/login");
+    navigate("/");
   };
 
   return (
@@ -49,10 +49,8 @@ const SignUp = () => {
       <section className="signup-upper">
         <h1>Färgbolaget</h1>
         <p className="header-text">Skapa Konto</p>
-
         {loading && <p>...Loading</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
-
         <Form
           formData={formData}
           handleChange={handleChange}
@@ -60,7 +58,6 @@ const SignUp = () => {
           handleSubmit={handleSubmit}
         />
       </section>
-
       <section className="signup-lower">
         <div className="small-text">
           <p>

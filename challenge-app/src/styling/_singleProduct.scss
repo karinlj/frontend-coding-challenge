@@ -15,10 +15,6 @@
     flex: 0 0 33.33333%;
     max-width: 33.33333%;
   }
-  // @media all and (min-width: $lg-min) {
-  //   flex: 0 0 25%;
-  //   max-width: 25%;
-  // }
   img {
     max-width: 100%;
     object-fit: cover;
@@ -34,15 +30,6 @@
     height: 60%;
     border-top-right-radius: $themeBorderRadius;
     border-top-left-radius: $themeBorderRadius;
-    &.red {
-      background: red;
-    }
-    &.pink {
-      background: deeppink;
-    }
-    &.green {
-      background: forestgreen;
-    }
   }
   h2 {
     margin-top: 0;
