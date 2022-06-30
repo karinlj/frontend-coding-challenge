@@ -4,7 +4,7 @@
 
 Simple signup and login form with color cards as products.
 
-![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
+![Screenshot](/challenge-app/src/assets/screenshot.jpg?raw=true "Screenshot")
 
 ## Installation
 
