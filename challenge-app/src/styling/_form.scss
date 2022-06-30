@@ -22,9 +22,6 @@ form {
       border-radius: 5px;
       border-radius: $themeBorderRadius;
     }
-    &::placeholder {
-      color: $middleGrey;
-    }
   }
   input[type="checkbox"] {
     width: auto;
