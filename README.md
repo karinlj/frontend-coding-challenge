@@ -1,18 +1,36 @@
 # frontend-coding-challenge
 
-Using the https://reqres.in/ API, create a login, create user and logged in view.
+## Description
 
-Requirements:
-- React (Preferably Typescript)
-- Mobile friendly
+Simple signup and login form with color cards as products.
 
-Results:
-- A login view with username and password fields
-- A create user view with username and password fields as a minimum
-- On successful login a table of products using this url: https://reqres.in/api/products
+![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
 
+## Installation
 
-Challenge instructions:
-- Fork this repo
-- Complete the challenge (and edit the read me with installation/running instructions)
-- Email jobb@spinit.se / jens.hendar@spinit.se
+To clone
+
+`git clone https://github.com/karinlj/frontend-coding-challenge.git`
+
+To install
+
+`cd challenge-app`
+
+`npm install`
+
+To run
+
+`npm start`
+
+## Built With
+
+- React.js
+- Scss
+
+## Author
+
+- **Karin Ljunggren** - [karinlj](https://github.com/karinlj)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

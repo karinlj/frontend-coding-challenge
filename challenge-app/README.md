@@ -14,8 +14,6 @@ To clone
 
 To install
 
-`cd challenge-app`
-
 `npm install`
 
 To run
