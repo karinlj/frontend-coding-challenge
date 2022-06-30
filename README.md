@@ -31,6 +31,8 @@ To run
 
 - **Karin Ljunggren** - [karinlj](https://github.com/karinlj)
 
-## License
+## How to use
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+[reqres.in/](https://reqres.in/)
+Register with defined user: [eve.holt@reqres.in](mailto:eve.holt@reqres.in)
+Login with a defined user: [eve.holt@reqres.in](mailto:eve.holt@reqres.in)
